@@ -1,0 +1,111 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-void: #0a0c10;
+  --color-panel: #12161c;
+  --color-line: #262c34;
+  --color-ink: #f4f1ea;
+  --color-ink-dim: #8b96a3;
+  --color-signal: #ff5a1f;
+
+  --font-display: 'Rajdhani', system-ui, sans-serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-signal);
+    color: var(--color-void);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .hud-grid {
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--color-line) 55%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--color-line) 55%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 0.45;
+    transform: translate(
+      calc(var(--hud-mx, 0) * 18px),
+      calc(var(--hud-my, 0) * 18px)
+    );
+    will-change: transform;
+  }
+
+  .hud-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      140px circle at calc(var(--hud-flash-x, -9999) * 1px) calc(var(--hud-flash-y, -9999) * 1px),
+      color-mix(in srgb, var(--color-signal) 14%, transparent),
+      transparent
+    );
+    opacity: var(--hud-flash-o, 0);
+    pointer-events: none;
+  }
+
+  .hud-scanner {
+    background: radial-gradient(
+      480px circle at calc(var(--hud-px, -9999) * 1px) calc(var(--hud-py, -9999) * 1px),
+      color-mix(in srgb, var(--color-signal) 7%, transparent),
+      transparent 68%
+    );
+  }
+
+  html.hud-cursor-active,
+  html.hud-cursor-active * {
+    cursor: none !important;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  html.hud-cursor-active p,
+  html.hud-cursor-active h1,
+  html.hud-cursor-active h2,
+  html.hud-cursor-active h3,
+  html.hud-cursor-active h4,
+  html.hud-cursor-active main li,
+  html.hud-cursor-active main a {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hud-grid,
+    .hud-scanner {
+      display: none;
+    }
+
+    html.hud-cursor-active,
+    html.hud-cursor-active * {
+      cursor: auto !important;
+    }
+  }
+}
