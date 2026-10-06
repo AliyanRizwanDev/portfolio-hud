@@ -111,7 +111,7 @@ function Page() {
             I build digital products, internal tools, and the systems that support them. My work sits between product thinking and implementation: I care about interfaces people can use without friction, APIs teams can maintain, and workflows that make sense to the people using them.
           </p>
           <p data-reveal className="mt-5 max-w-2xl text-[15px] leading-relaxed">
-            I studied M.Sc. Web &amp; Data Science at Universität Koblenz and completed my B.S. in Computer Science at the University of Central Punjab. I have worked on production applications serving 15k+ users, built multiple full-stack products end-to-end, and continue to look for work where strong engineering and clear product judgment matter equally.
+            I am pursuing an M.Sc. in Web &amp; Data Science at Universität Koblenz and completed my B.Sc. in Computer Science at the University of Central Punjab. I have worked on production applications serving 15k+ users, built multiple full-stack products end-to-end, and continue to look for work where strong engineering and clear product judgment matter equally.
           </p>
         </Section>
 

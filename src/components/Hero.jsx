@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div data-scanline aria-hidden="true" className="h-px w-full origin-left bg-signal" />
 
-      <p className="mt-8 text-[11px] tracking-[0.18em] text-ink-dim uppercase">Mohammad Aliyan / Full-stack engineer</p>
+      <p className="mt-8 text-[11px] tracking-[0.18em] text-ink-dim uppercase">Mohammad Aliyan / Full-stack software engineer</p>
 
       <h1 className="mt-10 font-display text-[clamp(2.6rem,8vw,5.5rem)] leading-[1.02] font-bold tracking-[-0.01em] uppercase">
         {lines.map((line) => (
