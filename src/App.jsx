@@ -78,9 +78,9 @@ function Page() {
           title="Work"
           lede="Selected builds from my full-stack and product work — mostly product-facing systems that had to be useful, reliable, and easy to trust in real operations."
         >
-          <ul className="divide-y divide-line">
+          <ul className="divide-y-2 divide-line">
             {projects.map((project) => (
-              <li key={project.id} className="py-14 first:pt-0 last:pb-0 sm:py-16">
+              <li key={project.id} className="py-16 first:pt-0 last:pb-0 sm:py-20">
                 <ProjectRow project={project} />
               </li>
             ))}
