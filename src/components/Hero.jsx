@@ -1,8 +1,5 @@
-const lines = ['I build systems', 'that show their work.']
+const lines = ['I build', 'products people trust.']
 
-// The one signature moment on the page: a targeting frame. Bracket corners
-// and a scan line fire once on load (see the useGSAP block in App.jsx), then
-// go still for the rest of the page — no other section repeats this motif.
 export default function Hero() {
   return (
     <header className="relative flex min-h-[80svh] flex-col justify-center py-16">
@@ -40,12 +37,11 @@ export default function Hero() {
       <span
         data-bar
         aria-hidden="true"
-        className="mt-6 block h-2 w-16 -skew-x-[20deg] bg-signal"
+        className="mt-6 block h-2 w-16 skew-x-[-20deg] bg-signal"
       />
 
       <p data-sub className="mt-7 max-w-lg text-[15px] leading-relaxed text-ink-dim">
-        Machine learning and backend engineering, mostly on problems where a wrong answer costs
-        someone money and somebody has to be able to ask why it happened.
+        Full-stack developer working across React, Next.js, TypeScript and backend systems — building user-facing products that need to be clear, fast, and reliable in the real world.
       </p>
     </header>
   )

@@ -61,7 +61,7 @@ function Page() {
   )
 
   return (
-    <div ref={root} className="relative z-10 mx-auto w-full max-w-[76rem] px-6 sm:px-10">
+    <div ref={root} className="relative z-10 mx-auto w-full max-w-304 px-6 sm:px-10">
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:absolute focus:z-10 focus:mt-3 focus:bg-ink focus:px-3 focus:py-2 focus:text-sm focus:text-void"
@@ -76,7 +76,7 @@ function Page() {
         <Section
           id="work"
           title="Work"
-          lede="Five projects, the most technically involved first. Each one carries the number I would be asked about in an interview, and the part that still does not hold up."
+          lede="Selected builds from my full-stack and product work — mostly product-facing systems that had to be useful, reliable, and easy to trust in real operations."
         >
           <ul className="divide-y divide-line">
             {projects.map((project) => (
@@ -90,7 +90,7 @@ function Page() {
         <Section
           id="skills"
           title="Skills"
-          lede="Ordered inside each group by what I would be comfortable being interviewed on with no warning."
+          lede="The stack I use most often when turning product requirements into working systems: frontend, APIs, data, and delivery."
         >
           <div data-reveal className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {skills.map((skill) => (
@@ -108,50 +108,54 @@ function Page() {
 
         <Section id="about" title="About" lede="The short version.">
           <p data-reveal className="max-w-2xl text-[15px] leading-relaxed">
-            I work on the part of machine learning that starts after the model works — evaluation,
-            failure modes, and getting a system to explain itself to whoever has to sign their name
-            under its output. I came in through backend engineering, which is why I would rather
-            ship something small I can watch in production than something clever that I cannot. Away
-            from work I storyboard short animated sequences, slowly and not especially well, and most
-            of what I know about pacing came from that rather than from anything on this page.
+            I am a full-stack developer with a strong focus on React, Next.js, TypeScript, and backend systems that need to stay dependable under real product pressure. My work sits between product thinking and implementation: I like building interfaces people can use without friction, APIs that stay maintainable, and flows that make sense to both users and teams.
+          </p>
+          <p data-reveal className="mt-5 max-w-2xl text-[15px] leading-relaxed">
+            I studied M.Sc. Web &amp; Data Science at Universität Koblenz and completed my B.S. in Computer Science at the University of Central Punjab. I have worked on production applications serving 15k+ users, built multiple full-stack products end-to-end, and continue to look for work where strong engineering and clear product judgment matter equally.
           </p>
         </Section>
 
-        <Section id="contact" title="Contact" lede="Email is the one I actually watch.">
-          <div data-reveal className="max-w-2xl">
-            <a
-              href="mailto:hello@example.com"
-              className="font-display text-[clamp(1.4rem,4.5vw,2.4rem)] font-bold text-ink underline decoration-line underline-offset-[0.18em] transition-colors hover:text-signal hover:decoration-signal"
-            >
-              hello@example.com
-            </a>
-
-            <p className="mt-8 text-[15px] leading-relaxed">
-              Send a job description and I will tell you within a day whether I think I am the right
-              fit for it, including the times I am not.
-            </p>
-
-            <p className="mt-6 flex gap-7 text-[11px] tracking-[0.16em] uppercase">
-              <a href="#" className="text-ink-dim transition-colors hover:text-signal">
-                GitHub
+        <Section id="contact" title="Contact" lede="Happy to talk about product or engineering work.">
+          <div data-reveal className="grid gap-10 md:grid-cols-[minmax(0,1fr)_14rem] md:items-center">
+            <div>
+              <a
+                href="mailto:aliyanrizwandev@gmail.com"
+                className="font-display text-[clamp(1.4rem,4.5vw,2.4rem)] font-bold text-ink underline decoration-line underline-offset-[0.18em] transition-colors hover:text-signal hover:decoration-signal"
+              >
+                aliyanrizwandev@gmail.com
               </a>
-              <a href="#" className="text-ink-dim transition-colors hover:text-signal">
-                Writing
-              </a>
-            </p>
+
+              <p className="mt-6 text-[15px] leading-relaxed">Koblenz, Germany • +49 160 4236589.</p>
+
+              <p className="mt-8 flex flex-wrap gap-7 text-[11px] tracking-[0.16em] uppercase">
+                <a href="https://github.com/AliyanRizwanDev" target="_blank" rel="noreferrer" className="text-ink-dim transition-colors hover:text-signal">
+                  GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/aliyan-rizwan-dev/" target="_blank" rel="noreferrer" className="text-ink-dim transition-colors hover:text-signal">
+                  LinkedIn
+                </a>
+              </p>
+            </div>
+
+            <img
+              src="/profile/mohammad-aliyan.jpg"
+              alt="Mohammad Aliyan"
+              className="h-56 w-56 justify-self-start rounded-sm border border-line object-cover object-center md:justify-self-end"
+              loading="lazy"
+            />
           </div>
         </Section>
       </main>
 
       <footer className="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-t border-line py-10 text-[11px] tracking-[0.16em] text-ink-dim uppercase">
         <span className="flex items-center gap-3">
-          <span aria-hidden="true" className="flex items-center gap-[3px]">
-            <span className="h-3 w-[2px] bg-signal" />
-            <span className="h-3 w-[2px] bg-ink-dim" />
+          <span aria-hidden="true" className="flex items-center gap-0.75">
+            <span className="h-3 w-0.5 bg-signal" />
+            <span className="h-3 w-0.5 bg-ink-dim" />
           </span>
           2026
         </span>
-        <span>Rajdhani &amp; IBM Plex Sans</span>
+        <span>Mohammad Aliyan</span>
       </footer>
     </div>
   )

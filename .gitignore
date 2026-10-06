@@ -25,3 +25,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# Local agent probes and generated test output
+test-results
+temp_*.cjs
+temp_*.js

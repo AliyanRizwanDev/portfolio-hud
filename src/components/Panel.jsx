@@ -7,7 +7,7 @@ export default function Panel({ panel }) {
   return (
     <div
       data-panel
-      className="group/panel relative flex w-full flex-col rounded-xs bg-panel p-4 transition-transform duration-200 ease-out group-hover:-translate-y-1 group-focus-within:-translate-y-1 sm:aspect-16/9 sm:p-5"
+      className="group/panel relative flex w-full flex-col rounded-xs bg-panel p-4 transition-transform duration-200 ease-out group-hover:-translate-y-1 group-focus-within:-translate-y-1 sm:aspect-video sm:p-5"
     >
       <span
         aria-hidden="true"
