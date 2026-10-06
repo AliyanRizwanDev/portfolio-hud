@@ -2,7 +2,7 @@
 
 Single-page portfolio built as a dark HUD-style interface — bracket-framed hero, live metric readouts in the project panels, scroll-driven count-ups, and a radar ping when you click empty grid space on desktop.
 
-**Live demo:** [portfolio-hud-one.vercel.app](https://portfolio-hud-one.vercel.app)
+**Live demo:** [mohammad-aliyan-portfolio.vercel.app](https://mohammad-aliyan-portfolio.vercel.app)
 
 ![Hero preview](./public/preview.png)
 
