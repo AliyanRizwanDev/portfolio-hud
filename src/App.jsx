@@ -108,7 +108,7 @@ function Page() {
 
         <Section id="about" title="About" lede="The short version.">
           <p data-reveal className="max-w-2xl text-[15px] leading-relaxed">
-            I am a full-stack developer with a strong focus on React, Next.js, TypeScript, and backend systems that need to stay dependable under real product pressure. My work sits between product thinking and implementation: I like building interfaces people can use without friction, APIs that stay maintainable, and flows that make sense to both users and teams.
+            I build digital products, internal tools, and the systems that support them. My work sits between product thinking and implementation: I care about interfaces people can use without friction, APIs teams can maintain, and workflows that make sense to the people using them.
           </p>
           <p data-reveal className="mt-5 max-w-2xl text-[15px] leading-relaxed">
             I studied M.Sc. Web &amp; Data Science at Universität Koblenz and completed my B.S. in Computer Science at the University of Central Punjab. I have worked on production applications serving 15k+ users, built multiple full-stack products end-to-end, and continue to look for work where strong engineering and clear product judgment matter equally.

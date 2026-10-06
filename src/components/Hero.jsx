@@ -43,7 +43,7 @@ export default function Hero() {
       />
 
       <p data-sub className="mt-7 max-w-lg text-[15px] leading-relaxed text-ink-dim">
-        I work across React, Next.js, TypeScript, and backend systems. I like products that make the next step obvious, whether that means finding a course, managing a business, or reviewing an invoice.
+        I build digital products and the systems behind them. My work ranges from customer-facing experiences to internal tools, with a focus on making the next step clear.
       </p>
 
       <a href="#work" className="mt-8 inline-flex items-center gap-3 text-[11px] tracking-[0.16em] text-ink uppercase transition-colors hover:text-signal">
