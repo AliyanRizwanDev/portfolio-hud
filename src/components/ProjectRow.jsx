@@ -1,21 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import Panel from './Panel'
 
 export default function ProjectRow({ project }) {
   const gallery = (project.images || [project.image]).filter(Boolean)
+  const articleRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [modalImage, setModalImage] = useState(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (gallery.length <= 1) return undefined
+    const article = articleRef.current
+    if (!article) return undefined
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting && entry.intersectionRatio >= 0.6),
+      { threshold: [0, 0.6, 1] },
+    )
+
+    observer.observe(article)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible || gallery.length <= 1) return undefined
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % gallery.length)
     }, 4200)
 
     return () => window.clearInterval(timer)
-  }, [gallery])
+  }, [isVisible, gallery.length])
 
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -32,7 +47,7 @@ export default function ProjectRow({ project }) {
   }
 
   return (
-    <article data-reveal className="group grid gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center lg:gap-14">
+    <article ref={articleRef} data-reveal className="group grid gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center lg:gap-14">
       <Panel panel={project.panel} />
 
       <div>
@@ -63,7 +78,7 @@ export default function ProjectRow({ project }) {
                       src={image}
                       alt={`${project.name} product preview ${index + 1}`}
                       className="h-56 w-full object-cover object-top sm:h-64"
-                      loading="lazy"
+                      loading={index === activeIndex ? 'eager' : 'lazy'}
                     />
                   </button>
                 ))}

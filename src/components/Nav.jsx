@@ -18,14 +18,13 @@ export default function Nav() {
 
   return (
     <nav aria-label="Sections" className="flex items-center justify-between gap-6 py-7 sm:py-9">
-      <a href="#" aria-label="Home" className="relative flex items-center gap-[3px]">
+      <a href="#" aria-label="Mohammad Aliyan home" className="relative font-display text-sm font-bold tracking-[0.12em] text-ink uppercase transition-colors hover:text-signal">
         <span
           aria-hidden="true"
           data-status-dot
           className="absolute -top-1 -right-2 h-1.5 w-1.5 rounded-full bg-signal"
         />
-        <span aria-hidden="true" className="h-3.5 w-[3px] bg-signal" />
-        <span aria-hidden="true" className="h-3.5 w-[3px] bg-ink" />
+        Mohammad Aliyan
       </a>
       <ul className="flex gap-4 text-[11px] tracking-[0.16em] uppercase sm:gap-7">
         {links.map((link) => (
