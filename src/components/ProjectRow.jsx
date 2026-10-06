@@ -49,7 +49,7 @@ export default function ProjectRow({ project }) {
 
   return (
     <article ref={articleRef} data-reveal className="group grid gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-start lg:gap-14">
-      <div>
+      <div className="order-2 lg:order-1">
         <Panel panel={project.panel} />
 
         {details.length ? (
@@ -80,7 +80,7 @@ export default function ProjectRow({ project }) {
         ) : null}
       </div>
 
-      <div>
+      <div className="order-1 lg:order-2">
         <h3 className="font-display text-[clamp(1.6rem,3.4vw,2.3rem)] font-bold uppercase leading-tight text-ink transition-colors group-hover:text-signal group-focus-within:text-signal">
           {project.name}
         </h3>
