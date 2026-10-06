@@ -4,8 +4,8 @@ export const projects = [
     name: 'Course Options',
     role: 'Higher-education discovery platform for students and counsellors',
     body: [
-      'Course Options is a higher-education discovery platform focused on helping students compare programmes, understand costs, and make better decisions with less friction. The experience blends programme discovery, filtering, guidance, and conversion support into one product journey.',
-      'I worked on the product experience around discovery, search relevance, and decision support, with emphasis on trust, clarity, and performance at scale. The result was a product that felt easier to navigate while still giving users the depth they needed to evaluate options seriously.',
+      'Course Options helps students compare programmes, scholarships, and costs before they commit to an application. It brings search, SmartMatch, financial planning, UCAS support, and counsellor assistance into one journey.',
+      'I built discovery and filtering modules, connected notifications and social auth, and worked on Redis-backed search and admin content governance. My aim was simple: give students enough context to make a serious decision without making them fight the interface.',
     ],
     stack: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'PWA'],
     link: { label: 'Open live product', href: 'https://courseoptions.com/' },
@@ -25,7 +25,7 @@ export const projects = [
         { key: 'workflow', value: 'counsellor tools', score: '0.88', bar: 0.88 },
         { key: 'ux', value: 'clearer journey', score: '0.83', bar: 0.83 },
       ],
-      note: 'The product goal was to reduce uncertainty in course discovery and make programme comparison feel easier, faster, and more trustworthy.',
+      note: 'I treated search, comparison, and counsellor handoff as one connected journey rather than separate screens.',
     },
   },
   {
@@ -33,8 +33,8 @@ export const projects = [
     name: 'Enterprise LMS',
     role: 'Learning platform with delivery, assessments, and reporting workflows',
     body: [
-      'This project was designed for an enterprise training environment where reliability and teaching workflows mattered as much as UI polish. It covered course delivery, assessments, enrolment flows, and reporting for a large learner audience.',
-      'I contributed to the frontend and product architecture around course detail, admin operations, and reporting. The focus was to make the system easier to manage and more dependable for high-traffic learning periods.',
+      'This LMS handled course delivery, HLS video, live lectures, assessments, payment plans, coupons, and reporting for a large training operation.',
+      'I worked on enrolment and payment flows, course detail pages, the admin and student portals, quiz modules, topic trees, and reporting dashboards. The hard part was keeping everyday admin work predictable while the system handled peak exam traffic.',
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Apollo GraphQL', 'Redux', 'Tailwind'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
@@ -56,7 +56,7 @@ export const projects = [
         { key: 'payments', value: 'plans + billing', score: '0.86', bar: 0.86 },
         { key: 'scale', value: 'multi-module admin', score: '0.84', bar: 0.84 },
       ],
-      note: 'This project focused on operational clarity: course structure, assessments, payment flows, and admin workflows that had to be consistent and easy to manage.',
+      note: 'The useful part of this work was making course, assessment, and payment operations feel like one dependable system.',
     },
   },
   {
@@ -64,8 +64,8 @@ export const projects = [
     name: 'Connectify',
     role: 'Multi-role event management platform for organisers and attendees',
     body: [
-      'Connectify is a full-stack event platform with separate Admin, Organizer, and Attendee experiences. It covers event creation, attendee discovery, booking, notifications, profiles, and role-based access.',
-      'I worked across the full-stack architecture and route design, including the organizer creation flow, attendee booking journey, and notification behaviour. Seeded demo accounts and future-dated events make the platform easy to evaluate as a realistic product flow.',
+      'Connectify gives admins, organizers, and attendees different ways to work with the same event data. Organizers create events, attendees discover and book them, and admins keep the system in order.',
+      'I worked on the full-stack route design, organizer creation flow, booking journey, notifications, and seeded demo data. The project taught me to be strict about permissions because every role sees a different version of the same event lifecycle.',
     ],
     stack: ['React', 'Create React App', 'Redux', 'Node.js', 'Express', 'MongoDB', 'JWT', 'File uploads'],
     link: { label: 'Open live demo', href: 'https://connectify-gold-one.vercel.app/' },
@@ -84,7 +84,7 @@ export const projects = [
         { key: 'access', value: 'protected routes', score: '0.92', bar: 0.92 },
         { key: 'updates', value: 'notifications', score: '0.84', bar: 0.84 },
       ],
-      note: 'The project demonstrates how shared event data can support distinct admin, organizer, and attendee workflows without mixing their responsibilities.',
+      note: 'The important boundary here is ownership: organizers manage events, attendees manage bookings, and admins manage the system around them.',
     },
   },
   {
@@ -92,8 +92,8 @@ export const projects = [
     name: 'ERP Teacher Portal',
     role: 'Academic operations SPA for timetable, student records, and teacher workflows',
     body: [
-      'This role-aware academic ERP front-end simulates the daily workflows a teacher needs: timetable, nominal roll, student records, profile management, leave and loan actions, and internal notifications.',
-      'I designed the core teacher screens, route structure, data-dense tables, forms, and filters. The frontend uses structured mock data so the experience can be evaluated independently while remaining ready for backend integration.',
+      'This teacher portal puts timetable, nominal roll, student records, profile management, leave and loan requests, and internal notifications in one working view of the school day.',
+      'I designed the teacher screens, route structure, tables, forms, and filters. It runs on structured mock data, so the workflows can be reviewed now and connected to a backend later without redesigning the interface.',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Redux Toolkit', 'React Router', 'Tailwind CSS'],
     link: { label: 'Open live demo', href: 'https://erp-teacher-portal-five.vercel.app/' },
@@ -118,7 +118,7 @@ export const projects = [
         { key: 'planning', value: 'timetable flow', score: '0.87', bar: 0.87 },
         { key: 'forms', value: 'leave + profile', score: '0.85', bar: 0.85 },
       ],
-      note: 'The focus was turning institutional tasks into reusable screens with clear navigation, dense but readable data, and consistent state handling.',
+      note: 'I designed around the tasks a teacher repeats, with dense information kept readable and close at hand.',
     },
   },
   {
@@ -126,8 +126,8 @@ export const projects = [
     name: 'Online Tutor',
     role: 'Role-based education platform for admins, teachers, and students',
     body: [
-      'This platform brought together multiple education roles in one system so admins, teachers, and students each had a workflow that fit their responsibilities. It included course management, messaging, enrolment flows, and content-driven learning operations.',
-      'I built the role-specific interfaces and the modular architecture behind them. The goal was to keep the system organised and scalable while still making each user journey feel clear and focused.',
+      'Online Tutor separates the work of admins, teachers, and students without splitting the product into disconnected experiences. It covers enrolment, lectures, messaging, payments, profiles, blogs, FAQs, and testimonials.',
+      'I built role-specific dashboards, lecture and enrolment flows, messaging, payment workflows, route guards, and the public marketing pages. The main architectural decision was to keep shared patterns reusable while letting each role stay focused.',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Next.js', 'Redux Toolkit', 'Tailwind'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
@@ -151,7 +151,7 @@ export const projects = [
         { key: 'access', value: 'role-based gates', score: '0.89', bar: 0.89 },
         { key: 'content', value: 'learning modules', score: '0.83', bar: 0.83 },
       ],
-      note: 'The project focused on role-specific user journeys and keeping educational workflows clear across admin, tutor, and student actions.',
+      note: 'The same system supports three audiences, but each audience gets only the actions and information it needs.',
     },
   },
   {
@@ -159,8 +159,8 @@ export const projects = [
     name: 'CarsInstant',
     role: 'Automotive marketplace for inventory discovery, financing, and lead generation',
     body: [
-      'CarsInstant is a conversion-focused car marketplace built around verified dealer flows, transparent pricing, and inventory exploration by body type, brand, and budget.',
-      'I worked on inventory discovery, filter-driven browsing, trust-signal sections, testimonials, and financing pathway UX. The product combines marketplace browsing with structured lead-generation touchpoints so users can move from exploration to enquiry with less friction.',
+      'CarsInstant helps people browse vehicles by body type, brand, and budget, then move from a shortlist to a dealer enquiry. Verified dealer information and transparent pricing do a lot of the trust-building work.',
+      'I built inventory discovery, filter-driven browsing, trust sections, testimonials, and the financing pathway. I paid particular attention to the point where browsing becomes an enquiry, because that is where a marketplace either helps or loses the user.',
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
     link: { label: 'Open live product', href: 'https://www.carsinstant.com' },
@@ -182,7 +182,7 @@ export const projects = [
         { key: 'financing', value: 'guided pathway', score: '0.85', bar: 0.85 },
         { key: 'conversion', value: 'lead touchpoints', score: '0.90', bar: 0.9 },
       ],
-      note: 'The product work connected practical vehicle search with trust signals and clear next steps for buyers and dealers.',
+      note: 'The interface connects browsing with a clear next step instead of leaving the buyer at the end of a listing page.',
     },
   },
   {
@@ -190,8 +190,8 @@ export const projects = [
     name: 'Responica',
     role: 'Digital agency and BPO platform focused on service discovery and lead capture',
     body: [
-      'Responica is a service-led corporate platform for a digital solutions and BPO business covering web, mobile, marketing, telesales, and quality assurance services.',
-      'I delivered end-to-end service pages and conversion-focused sections, including testimonials, FAQs, and contact funnel modules. The goal was to make a broad service offering credible, scannable, and easy for prospective clients to act on.',
+      'Responica presents a digital solutions and BPO business across web, mobile, marketing, telesales, and QA services. The site has to explain a broad offer without making visitors work to understand it.',
+      'I delivered the service pages, testimonials, FAQs, and contact funnel. I used a clear content structure so credibility comes before the enquiry prompt, rather than turning every section into a sales pitch.',
     ],
     stack: ['React', 'Vite', 'TypeScript', 'Tailwind CSS'],
     link: { label: 'Open live product', href: 'https://responica.vercel.app/' },
@@ -212,7 +212,7 @@ export const projects = [
         { key: 'answers', value: 'FAQ structure', score: '0.84', bar: 0.84 },
         { key: 'contact', value: 'lead funnel', score: '0.89', bar: 0.89 },
       ],
-      note: 'The challenge was balancing credibility content with direct conversion paths across several service categories.',
+      note: 'The copy and layout give visitors enough evidence to trust the service before asking them to make contact.',
     },
   },
   {
@@ -220,8 +220,8 @@ export const projects = [
     name: 'RechnungsLens',
     role: 'Explainable invoice review and validation platform for German invoice workflows',
     body: [
-      'RechnungsLens is a document-intelligence project focused on incoming invoices in the German market. The workflow is built around upload, extraction, validation, and a clear Release / Review / Reject decision model for AP teams handling PDF, scan, photo, and structured XML inputs.',
-      'The app uses a fast path for ZUGFeRD and XRechnung files, then falls back to Gemini-based extraction for scans and plain PDFs, followed by deterministic validation for missing fields, VAT format checks, and arithmetic verification. It is designed to explain the decision rather than hide it behind a black box.',
+      'RechnungsLens is a German invoice intake tool. A user uploads a PDF, scan, photo, or structured e-invoice and gets an explainable Release, Review, or Reject decision.',
+      'ZUGFeRD and XRechnung files take a direct XML path. Plain PDFs and scans use Gemini extraction, then deterministic checks cover required fields, VAT format, totals, and purchase-order warnings. The point is to show why a decision was made.',
     ],
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Google Gemini', 'PDF/XML processing', 'Validation engine'],
     link: { label: 'Open live demo', href: 'https://rechnungs-lens-tawny.vercel.app/' },
@@ -240,7 +240,7 @@ export const projects = [
         { key: 'validation', value: 'deterministic', score: '0.94', bar: 0.94 },
         { key: 'decision', value: 'release / review', score: '0.92', bar: 0.92 },
       ],
-      note: 'The project makes invoice processing explainable: structured files use a direct XML path, while extracted fields are checked before a clear decision is shown.',
+      note: 'Each decision has a reason: parse what is structured, extract what is not, then validate both with the same rules.',
     },
   },
   {
@@ -248,8 +248,8 @@ export const projects = [
     name: 'SK100 Frontend',
     role: 'Operations dashboard for inventory, invoices, purchases, and sales control',
     body: [
-      'SK100 Frontend is an operations dashboard built around the day-to-day workflows of a small business: sales, stock, purchases, invoices, suppliers, expenses, and receipts.',
-      'I focused on making dense operational screens readable and consistent. The value of the project is in its workflow structure: users can move between records, review totals, and complete routine tasks without losing context.',
+      'SK100 is a lightweight operations dashboard for sales, stock, purchases, invoices, suppliers, expenses, VAT reporting, and receipts.',
+      'I built the API integration patterns, pagination-heavy lists, and the handoffs between inventory, sales, and reporting. It is intentionally practical: users should be able to finish a routine task without losing their place.',
     ],
     stack: ['JavaScript', 'HTML5', 'CSS3', 'REST APIs', 'Business UI'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
@@ -272,7 +272,7 @@ export const projects = [
         { key: 'finance', value: 'invoices + expenses', score: '0.88', bar: 0.88 },
         { key: 'records', value: 'suppliers + purchases', score: '0.86', bar: 0.86 },
       ],
-      note: 'The interface is organised around the business tasks users repeat most: selling, checking stock, recording purchases, and reviewing financial records.',
+      note: 'The screens follow the order of real work: sell something, update stock, record the purchase, and review the numbers.',
     },
   },
 ]

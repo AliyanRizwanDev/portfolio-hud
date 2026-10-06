@@ -26,6 +26,8 @@ export default function Hero() {
 
       <div data-scanline aria-hidden="true" className="h-px w-full origin-left bg-signal" />
 
+      <p className="mt-8 text-[11px] tracking-[0.18em] text-ink-dim uppercase">Mohammad Aliyan / Full-stack engineer</p>
+
       <h1 className="mt-10 font-display text-[clamp(2.6rem,8vw,5.5rem)] leading-[1.02] font-bold tracking-[-0.01em] uppercase">
         {lines.map((line) => (
           <span key={line} data-headline className="block">
@@ -41,8 +43,13 @@ export default function Hero() {
       />
 
       <p data-sub className="mt-7 max-w-lg text-[15px] leading-relaxed text-ink-dim">
-        Full-stack developer working across React, Next.js, TypeScript and backend systems — building user-facing products that need to be clear, fast, and reliable in the real world.
+        I work across React, Next.js, TypeScript, and backend systems. I like products that make the next step obvious, whether that means finding a course, managing a business, or reviewing an invoice.
       </p>
+
+      <a href="#work" className="mt-8 inline-flex items-center gap-3 text-[11px] tracking-[0.16em] text-ink uppercase transition-colors hover:text-signal">
+        See selected work
+        <span aria-hidden="true" className="h-2.5 w-2.5 -rotate-45 border-r border-b border-signal" />
+      </a>
     </header>
   )
 }

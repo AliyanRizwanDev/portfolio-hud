@@ -96,7 +96,7 @@ export default function ProjectRow({ project }) {
                       className="flex h-7 w-7 items-center justify-center rounded-full border border-line bg-panel text-sm text-ink transition-colors hover:border-signal hover:text-signal"
                       aria-label="Previous project image"
                     >
-                      ←
+                      <span aria-hidden="true" className="h-2.5 w-2.5 rotate-45 border-b border-l border-current" />
                     </button>
                     <button
                       type="button"
@@ -107,7 +107,7 @@ export default function ProjectRow({ project }) {
                       className="flex h-7 w-7 items-center justify-center rounded-full border border-line bg-panel text-sm text-ink transition-colors hover:border-signal hover:text-signal"
                       aria-label="Next project image"
                     >
-                      →
+                      <span aria-hidden="true" className="h-2.5 w-2.5 -rotate-45 border-r border-b border-current" />
                     </button>
                   </div>
 
