@@ -9,6 +9,7 @@ export const projects = [
     ],
     stack: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'PWA'],
       details: ['15k+ students and institutions', 'SmartMatch, scholarships, and UCAS support', 'Lighthouse 96/100 · server response time -40%'],
+      roleDetails: ['Built discovery, filtering, and student journey modules', 'Integrated notifications, social auth, and Redis-backed search', 'Built admin content governance and admissions workflow panels'],
     link: { label: 'Open live product', href: 'https://courseoptions.com/' },
     images: [
       '/projects/course-options/course-ui-1.png',
@@ -39,6 +40,7 @@ export const projects = [
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Apollo GraphQL', 'Redux', 'Tailwind'],
       details: ['HLS video streaming, DRM, and live lectures', 'Quiz, assignment, payment-plan, and coupon flows', '99.9% uptime · 5k+ concurrent users during exams'],
+      roleDetails: ['Built public enrolment funnels, course pages, cart, and payments', 'Developed admin/student portals, quizzes, topic trees, and reports', 'Implemented Apollo GraphQL with generated types for content administration'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
     images: [
       '/projects/lms-admin/lms-course.png',
@@ -71,6 +73,7 @@ export const projects = [
     ],
     stack: ['React', 'Create React App', 'Redux', 'Node.js', 'Express', 'MongoDB', 'JWT', 'File uploads'],
       details: ['Admin, Organizer, and Attendee portals', 'Event lifecycle, bookings, notifications, and profiles', 'Seeded demo data with future-dated events'],
+      roleDetails: ['Designed the full-stack architecture and role-based routes', 'Built organizer creation and attendee booking flows', 'Implemented the notification system and profile handling'],
     link: { label: 'Open live demo', href: 'https://connectify-gold-one.vercel.app/' },
     images: [
       '/projects/connectify/screenshot-1.png',
@@ -100,6 +103,7 @@ export const projects = [
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Redux Toolkit', 'React Router', 'Tailwind CSS'],
       details: ['Timetable, nominal roll, and student records', 'Teacher profile, leave, loan, and notification flows', 'Structured mock data ready for backend integration'],
+      roleDetails: ['Designed teacher screens and role-aware navigation', 'Created data-dense tables, forms, and filters', 'Established reusable components and centralised state'],
     link: { label: 'Open live demo', href: 'https://erp-teacher-portal-five.vercel.app/' },
     images: [
       '/projects/erp-teacher-portal/screenshot-1.png',
@@ -135,6 +139,7 @@ export const projects = [
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Next.js', 'Redux Toolkit', 'Tailwind'],
       details: ['Separate admin, teacher, and student portals', 'Lectures, enrolments, messaging, and payments', 'Public marketing site with blogs, FAQs, and testimonials'],
+      roleDetails: ['Built dashboards for admin, teacher, and student users', 'Implemented lectures, enrolments, messaging, and payment workflows', 'Applied route guards and modular page architecture'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
     images: [
       '/projects/online-tutor/online-home.png',
@@ -169,6 +174,7 @@ export const projects = [
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
       details: ['Verified dealer flows and transparent pricing', 'Inventory browsing by body type, brand, and budget', 'Financing pathway and lead-generation touchpoints'],
+      roleDetails: ['Built inventory discovery, filtering, and conversion touchpoints', 'Developed trust sections, testimonials, and financing UX', 'Structured browsing around body type, brand, and budget'],
     link: { label: 'Open live product', href: 'https://www.carsinstant.com' },
     images: [
       '/projects/carsinstant/cars-first.png',
@@ -201,6 +207,7 @@ export const projects = [
     ],
     stack: ['React', 'Vite', 'TypeScript', 'Tailwind CSS'],
       details: ['Web, mobile, marketing, telesales, and QA services', 'Service pages, testimonials, and FAQ modules', 'Contact funnel built for qualified enquiries'],
+      roleDetails: ['Delivered service pages and conversion-focused sections', 'Created testimonials and FAQ modules', 'Built contact funnel modules to support lead confidence'],
     link: { label: 'Open live product', href: 'https://responica.vercel.app/' },
     images: [
       '/projects/responica/screenshot-1.png',
@@ -232,6 +239,7 @@ export const projects = [
     ],
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Google Gemini', 'PDF/XML processing', 'Validation engine'],
       details: ['PDF, scan, photo, XRechnung, and ZUGFeRD intake', 'Gemini extraction with per-field confidence', 'Deterministic VAT, totals, and required-field checks'],
+      roleDetails: ['Built upload, extraction, validation, and decision flows', 'Implemented the ZUGFeRD/XRechnung XML fast path', 'Added explainable Release, Review, and Reject routing'],
     link: { label: 'Open live demo', href: 'https://rechnungs-lens-tawny.vercel.app/' },
     images: [
       '/projects/rechnungslens/home.png',
@@ -261,6 +269,7 @@ export const projects = [
     ],
     stack: ['JavaScript', 'HTML5', 'CSS3', 'REST APIs', 'Business UI'],
       details: ['Inventory, purchases, invoices, suppliers, and expenses', 'VAT reporting plus receipt and print views', 'Pagination-heavy lists with practical API integration'],
+      roleDetails: ['Developed API integration patterns and pagination-heavy lists', 'Connected inventory, sales, purchases, and reporting workflows', 'Delivered receipt, print, VAT, supplier, and expense views'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
     images: [
       '/projects/pos-system/pos-dashboard.png',

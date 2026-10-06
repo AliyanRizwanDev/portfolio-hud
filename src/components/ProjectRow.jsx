@@ -65,6 +65,19 @@ export default function ProjectRow({ project }) {
             </ul>
           </div>
         ) : null}
+        {project.roleDetails?.length ? (
+          <div className="mt-5 border-t border-line pt-4">
+            <p className="text-[10px] tracking-[0.18em] text-ink-dim uppercase">My role</p>
+            <ul className="mt-3 space-y-2 text-[13px] leading-snug text-ink-dim">
+              {project.roleDetails.map((detail) => (
+                <li key={detail} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-signal" />
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
 
       <div>
