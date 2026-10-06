@@ -4,6 +4,7 @@ import Panel from './Panel'
 
 export default function ProjectRow({ project }) {
   const gallery = (project.images || [project.image]).filter(Boolean)
+  const details = project.details || project.highlights || []
   const articleRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [modalImage, setModalImage] = useState(null)
@@ -47,14 +48,31 @@ export default function ProjectRow({ project }) {
   }
 
   return (
-    <article ref={articleRef} data-reveal className="group grid gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center lg:gap-14">
-      <Panel panel={project.panel} />
+    <article ref={articleRef} data-reveal className="group grid gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-start lg:gap-14">
+      <div>
+        <Panel panel={project.panel} />
+
+        {details.length ? (
+          <div className="mt-5 border-t border-line pt-4">
+            <p className="text-[10px] tracking-[0.18em] text-ink-dim uppercase">Project details</p>
+            <ul className="mt-3 space-y-2 text-[13px] leading-snug text-ink-dim">
+              {details.map((detail) => (
+                <li key={detail} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-signal" />
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
 
       <div>
         <h3 className="font-display text-[clamp(1.6rem,3.4vw,2.3rem)] font-bold uppercase leading-tight text-ink transition-colors group-hover:text-signal group-focus-within:text-signal">
           {project.name}
         </h3>
         <p className="mt-1.5 text-sm text-ink-dim">{project.role}</p>
+        <p className="mt-4 text-[11px] tracking-[0.14em] text-ink-dim uppercase">{project.stack.join(' · ')}</p>
 
         <div className="mt-5 space-y-3 text-[15px] leading-relaxed">
           {project.body.map((paragraph) => (
@@ -118,9 +136,7 @@ export default function ProjectRow({ project }) {
                         type="button"
                         onClick={() => setActiveIndex(index)}
                         aria-label={`View image ${index + 1} of ${gallery.length}`}
-                        className={`h-2 w-2 rounded-full transition-colors ${
-                          index === activeIndex ? 'bg-signal' : 'bg-ink-dim'
-                        }`}
+                        className={`h-2 w-2 rounded-full transition-colors ${index === activeIndex ? 'bg-signal' : 'bg-ink-dim'}`}
                       />
                     ))}
                   </div>
@@ -129,8 +145,6 @@ export default function ProjectRow({ project }) {
             </div>
           </div>
         ) : null}
-
-        <p className="mt-6 text-[11px] tracking-[0.14em] text-ink-dim uppercase">{project.stack.join(' · ')}</p>
 
         {project.link?.href ? (
           <a
@@ -154,9 +168,7 @@ export default function ProjectRow({ project }) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-void/85 p-4 backdrop-blur-sm"
           onClick={() => setModalImage(null)}
         >
-          <div
-            className="relative w-full max-w-5xl overflow-hidden rounded-sm border border-line bg-panel shadow-2xl"
-          >
+          <div className="relative w-full max-w-5xl overflow-hidden rounded-sm border border-line bg-panel shadow-2xl">
             <button
               type="button"
               onClick={() => setModalImage(null)}

@@ -8,6 +8,7 @@ export const projects = [
       'I built discovery and filtering modules, connected notifications and social auth, and worked on Redis-backed search and admin content governance. My aim was simple: give students enough context to make a serious decision without making them fight the interface.',
     ],
     stack: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'PWA'],
+      details: ['15k+ students and institutions', 'SmartMatch, scholarships, and UCAS support', 'Lighthouse 96/100 · server response time -40%'],
     link: { label: 'Open live product', href: 'https://courseoptions.com/' },
     images: [
       '/projects/course-options/course-ui-1.png',
@@ -37,6 +38,7 @@ export const projects = [
       'I worked on enrolment and payment flows, course detail pages, the admin and student portals, quiz modules, topic trees, and reporting dashboards. The hard part was keeping everyday admin work predictable while the system handled peak exam traffic.',
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Apollo GraphQL', 'Redux', 'Tailwind'],
+      details: ['HLS video streaming, DRM, and live lectures', 'Quiz, assignment, payment-plan, and coupon flows', '99.9% uptime · 5k+ concurrent users during exams'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
     images: [
       '/projects/lms-admin/lms-course.png',
@@ -68,6 +70,7 @@ export const projects = [
       'I worked on the full-stack route design, organizer creation flow, booking journey, notifications, and seeded demo data. The project taught me to be strict about permissions because every role sees a different version of the same event lifecycle.',
     ],
     stack: ['React', 'Create React App', 'Redux', 'Node.js', 'Express', 'MongoDB', 'JWT', 'File uploads'],
+      details: ['Admin, Organizer, and Attendee portals', 'Event lifecycle, bookings, notifications, and profiles', 'Seeded demo data with future-dated events'],
     link: { label: 'Open live demo', href: 'https://connectify-gold-one.vercel.app/' },
     images: [
       '/projects/connectify/screenshot-1.png',
@@ -96,6 +99,7 @@ export const projects = [
       'I designed the teacher screens, route structure, tables, forms, and filters. It runs on structured mock data, so the workflows can be reviewed now and connected to a backend later without redesigning the interface.',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Redux Toolkit', 'React Router', 'Tailwind CSS'],
+      details: ['Timetable, nominal roll, and student records', 'Teacher profile, leave, loan, and notification flows', 'Structured mock data ready for backend integration'],
     link: { label: 'Open live demo', href: 'https://erp-teacher-portal-five.vercel.app/' },
     images: [
       '/projects/erp-teacher-portal/screenshot-1.png',
@@ -130,6 +134,7 @@ export const projects = [
       'I built role-specific dashboards, lecture and enrolment flows, messaging, payment workflows, route guards, and the public marketing pages. The main architectural decision was to keep shared patterns reusable while letting each role stay focused.',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Next.js', 'Redux Toolkit', 'Tailwind'],
+      details: ['Separate admin, teacher, and student portals', 'Lectures, enrolments, messaging, and payments', 'Public marketing site with blogs, FAQs, and testimonials'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
     images: [
       '/projects/online-tutor/online-home.png',
@@ -163,6 +168,7 @@ export const projects = [
       'I built inventory discovery, filter-driven browsing, trust sections, testimonials, and the financing pathway. I paid particular attention to the point where browsing becomes an enquiry, because that is where a marketplace either helps or loses the user.',
     ],
     stack: ['React', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
+      details: ['Verified dealer flows and transparent pricing', 'Inventory browsing by body type, brand, and budget', 'Financing pathway and lead-generation touchpoints'],
     link: { label: 'Open live product', href: 'https://www.carsinstant.com' },
     images: [
       '/projects/carsinstant/cars-first.png',
@@ -194,6 +200,7 @@ export const projects = [
       'I delivered the service pages, testimonials, FAQs, and contact funnel. I used a clear content structure so credibility comes before the enquiry prompt, rather than turning every section into a sales pitch.',
     ],
     stack: ['React', 'Vite', 'TypeScript', 'Tailwind CSS'],
+      details: ['Web, mobile, marketing, telesales, and QA services', 'Service pages, testimonials, and FAQ modules', 'Contact funnel built for qualified enquiries'],
     link: { label: 'Open live product', href: 'https://responica.vercel.app/' },
     images: [
       '/projects/responica/screenshot-1.png',
@@ -224,6 +231,7 @@ export const projects = [
       'ZUGFeRD and XRechnung files take a direct XML path. Plain PDFs and scans use Gemini extraction, then deterministic checks cover required fields, VAT format, totals, and purchase-order warnings. The point is to show why a decision was made.',
     ],
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Google Gemini', 'PDF/XML processing', 'Validation engine'],
+      details: ['PDF, scan, photo, XRechnung, and ZUGFeRD intake', 'Gemini extraction with per-field confidence', 'Deterministic VAT, totals, and required-field checks'],
     link: { label: 'Open live demo', href: 'https://rechnungs-lens-tawny.vercel.app/' },
     images: [
       '/projects/rechnungslens/home.png',
@@ -252,6 +260,7 @@ export const projects = [
       'I built the API integration patterns, pagination-heavy lists, and the handoffs between inventory, sales, and reporting. It is intentionally practical: users should be able to finish a routine task without losing their place.',
     ],
     stack: ['JavaScript', 'HTML5', 'CSS3', 'REST APIs', 'Business UI'],
+      details: ['Inventory, purchases, invoices, suppliers, and expenses', 'VAT reporting plus receipt and print views', 'Pagination-heavy lists with practical API integration'],
     link: { label: 'Confidential implementation · visual overview shown', href: null },
     images: [
       '/projects/pos-system/pos-dashboard.png',
