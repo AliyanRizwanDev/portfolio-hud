@@ -131,7 +131,7 @@ function Page() {
                 <a href="https://github.com/AliyanRizwanDev" target="_blank" rel="noreferrer" className="text-ink-dim transition-colors hover:text-signal">
                   GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/aliyan-rizwan-dev/" target="_blank" rel="noreferrer" className="text-ink-dim transition-colors hover:text-signal">
+                <a href="https://www.linkedin.com/in/aliyanrizwandev/" target="_blank" rel="noreferrer" className="text-ink-dim transition-colors hover:text-signal">
                   LinkedIn
                 </a>
               </p>
