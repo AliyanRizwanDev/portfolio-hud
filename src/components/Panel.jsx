@@ -1,5 +1,3 @@
-import { parseScore } from '../motion'
-
 // Stands in for a screenshot of the real project UI: same 16:9 frame, but
 // built from live DOM so the text stays selectable and nothing has to be
 // downloaded. Swap an <img> in here once real captures exist.
@@ -41,38 +39,16 @@ export default function Panel({ panel }) {
         <span className="truncate text-[10px] text-ink-dim tabular-nums">{panel.meta}</span>
       </div>
 
-      <ul className="flex flex-1 flex-col justify-center gap-5 py-6">
-        {panel.rows.map((row) => {
-          const metric = parseScore(row.score)
-
-          return (
-            <li
-              key={row.key}
-              className="grid grid-cols-[minmax(0,5.25rem)_minmax(0,1fr)_auto] items-center gap-x-3 sm:grid-cols-[minmax(0,7rem)_minmax(0,1fr)_auto]"
-            >
-              <span className="truncate text-[11px] text-ink-dim">{row.key}</span>
-              <span className="truncate text-xs">{row.value}</span>
-              <span className="flex items-center justify-end gap-2.5">
-                {row.bar !== null && (
-                  <span aria-hidden="true" className="block h-1 w-8 overflow-hidden bg-ink/10 sm:w-11">
-                    <span
-                      data-bar
-                      data-bar-value={row.bar}
-                      className={`block h-full origin-left ${row.flag ? 'bg-signal' : 'bg-ink/45'}`}
-                      style={{ transform: `scaleX(${row.bar})` }}
-                    />
-                  </span>
-                )}
-                <span
-                  className={`w-10 text-right text-xs tabular-nums ${row.flag ? 'text-signal' : ''}`}
-                  {...(metric ? { 'data-metric': JSON.stringify(metric) } : {})}
-                >
-                  {row.score}
-                </span>
-              </span>
-            </li>
-          )
-        })}
+      <ul className="flex flex-1 flex-col justify-center divide-y divide-line/70 py-3">
+        {panel.rows.map((row) => (
+          <li
+            key={row.key}
+            className="grid grid-cols-[minmax(0,5rem)_minmax(0,1fr)] items-center gap-x-3 py-2.5 sm:grid-cols-[minmax(0,7rem)_minmax(0,1fr)]"
+          >
+            <span className="text-[10px] tracking-[0.08em] text-ink-dim uppercase">{row.key}</span>
+            <span className="text-right text-xs leading-snug">{row.value}</span>
+          </li>
+        ))}
       </ul>
 
       <p className="border-t border-line pt-2 text-[11px] leading-snug text-ink-dim">{panel.note}</p>

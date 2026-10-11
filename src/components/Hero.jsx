@@ -1,4 +1,4 @@
-const lines = ['I build', 'products people trust.']
+const lines = ['I build', 'web applications.']
 
 export default function Hero() {
   return (
@@ -43,7 +43,7 @@ export default function Hero() {
       />
 
       <p data-sub className="mt-7 max-w-lg text-[15px] leading-relaxed text-ink-dim">
-        I build digital products and the systems behind them. My work ranges from customer-facing experiences to internal tools, with a focus on making the next step clear.
+        I build software across the stack, from customer-facing products to internal tools.
       </p>
 
       <a href="#work" className="mt-8 inline-flex items-center gap-3 text-[11px] tracking-[0.16em] text-ink uppercase transition-colors hover:text-signal">

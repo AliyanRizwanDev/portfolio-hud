@@ -6,7 +6,6 @@ import { useGSAP } from '@gsap/react'
 
 import {
   bootSequence,
-  countUpMetrics,
   finePointer,
   initNavPulse,
   initPanelHover,
@@ -51,7 +50,6 @@ function Page() {
       const scope = root.current
       bootSequence(scope)
       revealOnScroll(scope, '[data-reveal]')
-      countUpMetrics(scope)
       initNavPulse(scope)
       initPanelHover(scope)
 
@@ -76,7 +74,7 @@ function Page() {
         <Section
           id="work"
           title="Work"
-          lede="Selected builds from my full-stack and product work — mostly product-facing systems that had to be useful, reliable, and easy to trust in real operations."
+          lede="A selection of web products and internal tools I've worked on."
         >
           <ul className="divide-y-2 divide-line">
             {projects.map((project) => (
@@ -90,9 +88,9 @@ function Page() {
         <Section
           id="skills"
           title="Skills"
-          lede="The stack I use most often when turning product requirements into working systems: frontend, APIs, data, and delivery."
+          lede="Technologies and tools listed on my CV."
         >
-          <div data-reveal className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div data-reveal className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {skills.map((skill) => (
               <div key={skill.group}>
                 <h3 className="text-[11px] tracking-[0.16em] text-ink-dim uppercase">{skill.group}</h3>
@@ -106,16 +104,51 @@ function Page() {
           </div>
         </Section>
 
-        <Section id="about" title="About" lede="The short version.">
+        <Section id="about" title="About" lede="A little about my background.">
           <p data-reveal className="max-w-2xl text-[15px] leading-relaxed">
-            I build digital products, internal tools, and the systems that support them. My work sits between product thinking and implementation: I care about interfaces people can use without friction, APIs teams can maintain, and workflows that make sense to the people using them.
+            I'm a full-stack software engineer with 1.5+ years of experience. At Ragzon Solutions, I built 5+ applications that together served 15k+ monthly active users. I reduced page load time by 44% (3.2s to 1.8s) through API restructuring, lazy loading, and Redis caching.
           </p>
           <p data-reveal className="mt-5 max-w-2xl text-[15px] leading-relaxed">
-            I am pursuing an M.Sc. in Web &amp; Data Science at Universität Koblenz and completed my B.Sc. in Computer Science at the University of Central Punjab. I have worked on production applications serving 15k+ users, built multiple full-stack products end-to-end, and continue to look for work where strong engineering and clear product judgment matter equally.
+            I completed my B.Sc. in Computer Science at the University of Central Punjab and am pursuing an M.Sc. in Web &amp; Data Science at Universität Koblenz.
           </p>
+          <div data-reveal className="mt-12 grid gap-10 border-t border-line pt-8 sm:grid-cols-2">
+            <div>
+              <h3 className="text-[11px] tracking-[0.16em] text-ink-dim uppercase">Languages</h3>
+              <ul className="mt-4 space-y-2 text-[15px]">
+                <li>English: C1 (Fluent)</li>
+                <li>German: A1 (Elementary)</li>
+                <li>Urdu: Native</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-[11px] tracking-[0.16em] text-ink-dim uppercase">Publication</h3>
+              <p className="mt-4 text-[15px] font-medium leading-relaxed">
+                <a
+                  href="https://doi.org/10.1109/INOCON60754.2024.10512150"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-line underline-offset-4 transition-colors hover:text-signal hover:decoration-signal"
+                >
+                  Analysis and Performance Evaluation of Various Shortest Path Algorithms
+                </a>
+              </p>
+              <p className="mt-2 text-sm text-ink-dim">Lead author · IEEE INOCON 2024</p>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-dim">
+                The paper compares 8+ shortest-path algorithms on graphs with 10k+ nodes. I implemented the simulations and analyzed their performance.
+              </p>
+              <a
+                href="https://doi.org/10.1109/INOCON60754.2024.10512150"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-block text-xs text-ink-dim underline decoration-line underline-offset-4 transition-colors hover:text-signal hover:decoration-signal"
+              >
+                Read the paper (DOI)
+              </a>
+            </div>
+          </div>
         </Section>
 
-        <Section id="contact" title="Contact" lede="Happy to talk about product or engineering work.">
+        <Section id="contact" title="Contact" lede="Get in touch about software engineering opportunities.">
           <div data-reveal className="grid gap-10 md:grid-cols-[minmax(0,1fr)_14rem] md:items-center">
             <div>
               <a

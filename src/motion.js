@@ -47,66 +47,6 @@ export function bootSequence(scope) {
     .to(q('[data-sub]'), { opacity: 1, y: 0, duration: 0.14, ease: 'power2.out' }, 0.62)
 }
 
-export function parseScore(score) {
-  if (score === 'ok') return null
-
-  const signed = /^\+(\d+\.?\d*)$/.exec(score)
-  if (signed) return { value: parseFloat(signed[1]), prefix: '+', decimals: 2 }
-
-  const suffix = /^(\d+\.?\d*)(s)$/.exec(score)
-  if (suffix) return { value: parseFloat(suffix[1]), suffix: suffix[2], decimals: 1 }
-
-  const plain = /^(\d+\.?\d*)$/.exec(score)
-  if (plain) {
-    return { value: parseFloat(plain[1]), decimals: score.includes('.') ? score.split('.')[1].length : 0 }
-  }
-
-  return null
-}
-
-function formatMetric(value, parsed) {
-  const { prefix = '', suffix = '', decimals = 2 } = parsed
-  return `${prefix}${value.toFixed(decimals)}${suffix}`
-}
-
-/** One ScrollTrigger.batch for every metric on the page — not one trigger per row. */
-export function countUpMetrics(scope) {
-  const metrics = scope.querySelectorAll('[data-metric]')
-  if (!metrics.length) return
-
-  metrics.forEach((el) => {
-    const parsed = JSON.parse(el.dataset.metric)
-    el.textContent = formatMetric(0, parsed)
-    const bar = el.closest('li')?.querySelector('[data-bar]')
-    if (bar) gsap.set(bar, { scaleX: 0, transformOrigin: 'left center' })
-  })
-
-  ScrollTrigger.batch(metrics, {
-    start: 'top 88%',
-    once: true,
-    onEnter: (batch) => {
-      batch.forEach((el) => {
-        const parsed = JSON.parse(el.dataset.metric)
-        const state = { val: 0 }
-        gsap.to(state, {
-          val: parsed.value,
-          duration: 0.55,
-          ease: 'power2.out',
-          onUpdate: () => {
-            el.textContent = formatMetric(state.val, parsed)
-          },
-        })
-
-        const bar = el.closest('li')?.querySelector('[data-bar]')
-        if (bar) {
-          const barVal = parseFloat(bar.dataset.barValue)
-          gsap.to(bar, { scaleX: barVal, duration: 0.55, ease: 'power2.out' })
-        }
-      })
-    },
-  })
-}
-
 export function initNavPulse(scope) {
   const dot = scope.querySelector('[data-status-dot]')
   if (!dot) return

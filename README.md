@@ -1,6 +1,6 @@
 # Portfolio
 
-Single-page portfolio built as a dark HUD-style interface — bracket-framed hero, live metric readouts in the project panels, scroll-driven count-ups, and a radar ping when you click empty grid space on desktop.
+Single-page portfolio built as a dark HUD-style interface — bracket-framed hero, project detail readouts, and a radar ping when you click empty grid space on desktop.
 
 **Live demo:** [mohammad-aliyan-portfolio.vercel.app](https://mohammad-aliyan-portfolio.vercel.app)
 
@@ -55,7 +55,7 @@ Defined in `src/index.css`:
 ## Motion (desktop)
 
 - **Boot** — brackets + scan line, hero text lands in under 800ms
-- **Scroll** — metric scores count up via one batched ScrollTrigger; bars use `scaleX`
+- **Scroll** — sections and project rows reveal as they enter view
 - **Hover** — project panel scan sweep + bracket tighten
 - **Click blank** — radar ping, horizontal scan line, coordinate flash
 - **Cursor** — crosshair reticle; text selects only when the pointer is over actual glyphs
@@ -72,7 +72,7 @@ Pushes to `main` deploy automatically on Vercel. Build command: `npm run build`.
 src/
   App.jsx           page shell + animation wiring
   content.js        five projects + skills (placeholder copy)
-  motion.js         boot, count-ups, panel hover, nav pulse
+  motion.js         boot, scroll reveals, panel hover, nav pulse
   components/
     Hero.jsx        bracket frame + thesis
     HudCursor.jsx   reticle + radar ping
