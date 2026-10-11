@@ -35,12 +35,39 @@ export default function ProjectRow({ project }) {
 
   useEffect(() => {
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') setModalImage(null)
+      if (event.key === 'Escape') {
+        setModalImage(null)
+        return
+      }
+
+      if (!modalImage || gallery.length <= 1) return
+
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault()
+        const direction = event.key === 'ArrowRight' ? 1 : -1
+        const nextIndex = (activeIndex + direction + gallery.length) % gallery.length
+        setActiveIndex(nextIndex)
+        setModalImage(gallery[nextIndex])
+      }
     }
 
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [])
+  }, [activeIndex, gallery, modalImage])
+
+  useEffect(() => {
+    if (!modalImage) return undefined
+
+    const previousBodyOverflow = document.body.style.overflow
+    const previousDocumentOverflow = document.documentElement.style.overflow
+    document.body.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow
+      document.documentElement.style.overflow = previousDocumentOverflow
+    }
+  }, [modalImage])
 
   const openImage = (index) => {
     setActiveIndex(index)
@@ -180,8 +207,11 @@ export default function ProjectRow({ project }) {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-void/85 p-4 backdrop-blur-sm"
           onClick={() => setModalImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${project.name} image gallery`}
         >
-          <div className="relative w-full max-w-5xl overflow-hidden rounded-sm border border-line bg-panel shadow-2xl">
+          <div className="relative flex max-h-[92dvh] max-w-[96vw] items-center justify-center" onClick={(event) => event.stopPropagation()}>
             <button
               type="button"
               onClick={() => setModalImage(null)}
@@ -190,11 +220,38 @@ export default function ProjectRow({ project }) {
             >
               ×
             </button>
+            {gallery.length > 1 ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const nextIndex = (activeIndex - 1 + gallery.length) % gallery.length
+                    setActiveIndex(nextIndex)
+                    setModalImage(gallery[nextIndex])
+                  }}
+                  className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-line bg-void/85 text-ink transition-colors hover:border-signal hover:text-signal sm:left-4"
+                  aria-label="Previous image"
+                >
+                  <span aria-hidden="true" className="h-3 w-3 rotate-45 border-b border-l border-current" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const nextIndex = (activeIndex + 1) % gallery.length
+                    setActiveIndex(nextIndex)
+                    setModalImage(gallery[nextIndex])
+                  }}
+                  className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-line bg-void/85 text-ink transition-colors hover:border-signal hover:text-signal sm:right-4"
+                  aria-label="Next image"
+                >
+                  <span aria-hidden="true" className="h-3 w-3 -rotate-45 border-r border-b border-current" />
+                </button>
+              </>
+            ) : null}
             <img
               src={modalImage}
               alt={`${project.name} full-size preview`}
-              className="max-h-[85vh] w-full object-contain"
-              onClick={(event) => event.stopPropagation()}
+              className="max-h-[88dvh] max-w-[96vw] object-contain"
             />
           </div>
         </div>
