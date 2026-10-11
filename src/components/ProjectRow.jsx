@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
+import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/styles.css'
 
 import Panel from './Panel'
@@ -197,7 +198,9 @@ export default function ProjectRow({ project }) {
         index={activeIndex}
         on={{ view: ({ index }) => setActiveIndex(index) }}
         controller={{ closeOnBackdropClick: true, closeOnEscape: true }}
-        carousel={{ imageFit: 'contain', padding: isSmallScreen ? '64px' : '10%', spacing: '24%' }}
+        plugins={[Zoom]}
+        zoom={{ maxZoom: 6, scrollToZoom: true }}
+        carousel={{ imageFit: 'contain', padding: isSmallScreen ? '16px' : '10%', spacing: '24%' }}
       />
     </article>
   )
