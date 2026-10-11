@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 
 import Panel from './Panel'
 
@@ -9,6 +11,26 @@ export default function ProjectRow({ project }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [modalImage, setModalImage] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  useEffect(() => {
+    if (!modalImage) return undefined
+
+    const root = document.documentElement
+    root.classList.add('hud-lightbox-open')
+    return () => root.classList.remove('hud-lightbox-open')
+  }, [modalImage])
+
+  useEffect(() => {
+    if (!modalImage) return undefined
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+    const updateScreenSize = () => setIsSmallScreen(mediaQuery.matches)
+
+    updateScreenSize()
+    mediaQuery.addEventListener('change', updateScreenSize)
+    return () => mediaQuery.removeEventListener('change', updateScreenSize)
+  }, [modalImage])
 
   useEffect(() => {
     const article = articleRef.current
@@ -24,50 +46,14 @@ export default function ProjectRow({ project }) {
   }, [])
 
   useEffect(() => {
-    if (!isVisible || gallery.length <= 1) return undefined
+    if (!isVisible || modalImage || gallery.length <= 1) return undefined
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % gallery.length)
     }, 4200)
 
     return () => window.clearInterval(timer)
-  }, [isVisible, gallery.length])
-
-  useEffect(() => {
-    const onKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setModalImage(null)
-        return
-      }
-
-      if (!modalImage || gallery.length <= 1) return
-
-      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-        event.preventDefault()
-        const direction = event.key === 'ArrowRight' ? 1 : -1
-        const nextIndex = (activeIndex + direction + gallery.length) % gallery.length
-        setActiveIndex(nextIndex)
-        setModalImage(gallery[nextIndex])
-      }
-    }
-
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
-  }, [activeIndex, gallery, modalImage])
-
-  useEffect(() => {
-    if (!modalImage) return undefined
-
-    const previousBodyOverflow = document.body.style.overflow
-    const previousDocumentOverflow = document.documentElement.style.overflow
-    document.body.style.overflow = 'hidden'
-    document.documentElement.style.overflow = 'hidden'
-
-    return () => {
-      document.body.style.overflow = previousBodyOverflow
-      document.documentElement.style.overflow = previousDocumentOverflow
-    }
-  }, [modalImage])
+  }, [isVisible, gallery.length, modalImage])
 
   const openImage = (index) => {
     setActiveIndex(index)
@@ -203,59 +189,16 @@ export default function ProjectRow({ project }) {
         )}
       </div>
 
-      {modalImage ? (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-void/85 p-4 backdrop-blur-sm"
-          onClick={() => setModalImage(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${project.name} image gallery`}
-        >
-          <div className="relative flex max-h-[92dvh] max-w-[96vw] items-center justify-center" onClick={(event) => event.stopPropagation()}>
-            <button
-              type="button"
-              onClick={() => setModalImage(null)}
-              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-line bg-void/80 text-lg text-ink transition-colors hover:border-signal hover:text-signal"
-              aria-label="Close image preview"
-            >
-              ×
-            </button>
-            {gallery.length > 1 ? (
-              <>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const nextIndex = (activeIndex - 1 + gallery.length) % gallery.length
-                    setActiveIndex(nextIndex)
-                    setModalImage(gallery[nextIndex])
-                  }}
-                  className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-line bg-void/85 text-ink transition-colors hover:border-signal hover:text-signal sm:left-4"
-                  aria-label="Previous image"
-                >
-                  <span aria-hidden="true" className="h-3 w-3 rotate-45 border-b border-l border-current" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const nextIndex = (activeIndex + 1) % gallery.length
-                    setActiveIndex(nextIndex)
-                    setModalImage(gallery[nextIndex])
-                  }}
-                  className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-line bg-void/85 text-ink transition-colors hover:border-signal hover:text-signal sm:right-4"
-                  aria-label="Next image"
-                >
-                  <span aria-hidden="true" className="h-3 w-3 -rotate-45 border-r border-b border-current" />
-                </button>
-              </>
-            ) : null}
-            <img
-              src={modalImage}
-              alt={`${project.name} full-size preview`}
-              className="max-h-[88dvh] max-w-[96vw] object-contain"
-            />
-          </div>
-        </div>
-      ) : null}
+      <Lightbox
+        className="portfolio-lightbox"
+        open={Boolean(modalImage)}
+        close={() => setModalImage(null)}
+        slides={gallery.map((src, index) => ({ src, alt: `${project.name} image ${index + 1}` }))}
+        index={activeIndex}
+        on={{ view: ({ index }) => setActiveIndex(index) }}
+        controller={{ closeOnBackdropClick: true, closeOnEscape: true }}
+        carousel={{ imageFit: 'contain', padding: isSmallScreen ? '64px' : '10%', spacing: '24%' }}
+      />
     </article>
   )
 }

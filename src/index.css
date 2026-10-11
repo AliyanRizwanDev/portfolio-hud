@@ -86,6 +86,63 @@
     -webkit-user-select: none;
   }
 
+  html.hud-cursor-active.hud-lightbox-open,
+  html.hud-cursor-active.hud-lightbox-open * {
+    cursor: auto !important;
+  }
+
+  html.hud-lightbox-open .hud-cursor-pings,
+  html.hud-lightbox-open .hud-cursor-reticle {
+    display: none;
+  }
+
+  html.hud-lightbox-open .yarl__button {
+    width: 48px;
+    height: 48px;
+    border: 1px solid color-mix(in srgb, var(--color-ink) 35%, transparent);
+    border-radius: 9999px;
+    background-color: color-mix(in srgb, var(--color-void) 92%, transparent);
+    color: var(--color-ink);
+    cursor: pointer !important;
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease;
+  }
+
+  html.hud-lightbox-open .yarl__navigation_prev,
+  html.hud-lightbox-open .yarl__navigation_next {
+    padding: 8px;
+  }
+
+  @media (max-width: 767px) {
+    .portfolio-lightbox .yarl__toolbar {
+      padding-top: max(8px, env(safe-area-inset-top));
+      padding-right: max(8px, env(safe-area-inset-right));
+    }
+
+    .portfolio-lightbox .yarl__navigation_prev {
+      left: max(4px, env(safe-area-inset-left));
+    }
+
+    .portfolio-lightbox .yarl__navigation_next {
+      right: max(4px, env(safe-area-inset-right));
+    }
+
+    .portfolio-lightbox .yarl__navigation_prev,
+    .portfolio-lightbox .yarl__navigation_next,
+    .portfolio-lightbox .yarl__toolbar .yarl__button {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
+
+  html.hud-lightbox-open .yarl__button:hover {
+    border-color: var(--color-signal);
+    background-color: var(--color-signal);
+    color: var(--color-void);
+  }
+
   html.hud-cursor-active p,
   html.hud-cursor-active h1,
   html.hud-cursor-active h2,

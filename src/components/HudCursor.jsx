@@ -252,13 +252,13 @@ export default function HudCursor() {
       <div
         ref={pingLayer}
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-[50] hidden overflow-hidden md:block"
+        className="hud-cursor-pings pointer-events-none fixed inset-0 z-[50] hidden overflow-hidden md:block"
       />
 
       <div
         ref={reticle}
         aria-hidden="true"
-        className="pointer-events-none fixed top-0 left-0 z-[60] hidden md:block"
+        className="hud-cursor-reticle pointer-events-none fixed top-0 left-0 z-[60] hidden md:block"
       >
         <span
           ref={ring}
