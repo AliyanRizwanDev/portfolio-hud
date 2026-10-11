@@ -31,15 +31,9 @@ npm run dev      # only after moving out of a path with %
 npm run lint
 ```
 
-## What's placeholder
+## Content accuracy
 
-Everything in `src/content.js` is invented — project names, metrics, panel numbers. Swap before this goes live.
-
-Also replace in:
-
-- `src/App.jsx` — About paragraph, email, GitHub/Writing links
-- `src/components/Hero.jsx` — thesis lines
-- `index.html` — title and meta description
+The Skills section in `src/content.js` mirrors the technical skills listed on the CV. Keep it in sync whenever the CV changes. Project entries may include work not listed on the CV; verify project descriptions and metrics against their source records before publishing.
 
 The panel frames are DOM readouts, not images. Drop real screenshots into `Panel.jsx` later without moving the layout.
 

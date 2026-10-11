@@ -297,19 +297,23 @@ export const projects = [
 
 export const skills = [
   {
+    group: 'Languages',
+    items: ['JavaScript (ES6+)', 'TypeScript', 'C', 'C++', 'SQL', 'Python'],
+  },
+  {
     group: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Redux Toolkit', 'Tailwind CSS', 'HTML5', 'CSS3'],
+    items: ['React', 'Next.js', 'Tailwind CSS', 'Redux Toolkit', 'HTML5/CSS3'],
   },
   {
-    group: 'Backend',
-    items: ['Node.js', 'Express.js', 'REST APIs', 'GraphQL', 'JWT/OAuth', 'Stripe', 'WebSockets'],
+    group: 'Backend & APIs',
+    items: ['Node.js', 'Express.js', 'REST APIs', 'JWT/OAuth', 'Stripe'],
   },
   {
-    group: 'Data & Systems',
-    items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Docker', 'Git', 'CI/CD', 'SQL'],
+    group: 'Databases',
+    items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis'],
   },
   {
-    group: 'Product',
-    items: ['Product thinking', 'Requirements translation', 'Performance tuning', 'Agile delivery', 'Code review', 'Cross-functional work'],
+    group: 'Tools',
+    items: ['Git', 'GitHub', 'Vercel', 'Linux'],
   },
 ]
